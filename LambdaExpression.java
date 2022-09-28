@@ -46,6 +46,15 @@ public class LambdaExpression {
         		return input;		
                 };
                 passwordReference.isValidUserInput("R@ja12345");    
+                
+        //to validate phone number using lambda expression
+        UserRegistration mobileNumberReference =(String input) -> {
+                Pattern pattern = Pattern.compile("^[+][1-9]{1,3} [0-9]{10}$");
+                Matcher matcher = pattern.matcher(input);
+                System.out.println(matcher.matches());
+                return input;		
+                };
+                mobileNumberReference.isValidUserInput("+91 9876543212");              
 	}	
 }
 
