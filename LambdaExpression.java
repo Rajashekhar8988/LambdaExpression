@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 @FunctionalInterface
 interface UserRegistration{
-	String validFirstName(String input);
+	String userInput(String input);
 }
 public class LambdaExpression {
 	public static void main(String[] args) {
@@ -15,6 +15,15 @@ public class LambdaExpression {
             System.out.println(matcher.matches());
 			return input;		
             };
-		firstNameReference.validFirstName("Rajashekhar");
-		}	
+		firstNameReference.userInput("Rajashekhar");	
+		
+	UserRegistration secondNameReference =(String input) -> {
+        Pattern pattern = Pattern.compile("^[A-Z][a-z]{3,}$");
+		Matcher matcher = pattern.matcher(input);
+        System.out.println(matcher.matches());
+		return input;		
+        };
+        secondNameReference.userInput("Reddy");
+	}	
 }
+
