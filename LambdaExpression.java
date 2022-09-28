@@ -24,6 +24,14 @@ public class LambdaExpression {
 		return input;		
         };
         secondNameReference.userInput("Reddy");
+        
+        UserRegistration eMailReference =(String input) -> {
+            Pattern pattern = Pattern.compile("^[a][b][c].[x][y][z][@][b][l].[c][o].[i][n]$");
+    		Matcher matcher = pattern.matcher(input);
+            System.out.println(matcher.matches());
+    		return input;		
+            };
+            eMailReference.userInput("abc.xyz@bl.co.in");
 	}	
 }
 
